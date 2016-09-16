@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+test('it has an attribute: ${1:attr}', function(assert) {
+  let model = this.subject();
+  let hasAttr = Object.keys(model.toJSON()).indexOf("${1:attr}") > -1;
+  assert.ok(hasAttr);
+});
+]]></content>
+    <tabTrigger>qattr</tabTrigger>
+    <scope>source.js</scope>
+</snippet>
