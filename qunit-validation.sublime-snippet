@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+test('${1:testDescription}', function(assert){
+  let model = this.subject();
+
+  Ember.run(function(){
+    ${3:AttrSetter}
+  });
+
+  assert.equal(model.get('isValid'), false, '${2:ErrorMessage}');
+});
+]]></content>
+    <tabTrigger>qval</tabTrigger>
+    <scope>source.js</scope>
+</snippet>

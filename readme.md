@@ -47,3 +47,17 @@ test('${1:attr} should be required', function(assert) {
   assert.equal("model.isValid", false, 'Object is Valid without a ${1:attr}');
 });
 ```
+
+### [qval] generic template for validation testing
+
+Don't forget to add necessary module dependancy declaration inside moduleForModel Qunit block.
+
+```js
+test('${1:testDescription}', function(assert){
+  var model = this.subject();
+  Ember.run(function(){
+    ${3:AttrSetter}
+  });
+  assert.equal(model.get('isValid'), false, '${2:ErrorMessage}');
+});
+```
