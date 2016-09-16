@@ -25,5 +25,25 @@ test('${1:modelCible} relationship', function(assert) {
   assert.equal(relationship.key, "${1:modelCible}");
   assert.equal(relationship.kind, "${3:belongsTo}");
 });
+```
 
+Test Model - Validation Snippets
+--------------------------------
+
+These snippets requires "ember-validations" plugins.
+
+### [qreq] Test attr who is required
+
+To use this snippet, ```"ember-validations@validator:local/presence"` module is required on moduleForModel declaration.
+
+```js
+test('${1:attr} should be required', function(assert) {
+  let model = this.subject();
+
+  Ember.run(function() {
+    model.set('${1:attr}', '');
+  });
+
+  assert.equal("model.isValid", false, 'Object is Valid without a ${1:attr}');
+});
 ```

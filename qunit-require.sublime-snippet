@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+test('${1:attr} should be required', function(assert) {
+  let model = this.subject();
+
+  Ember.run(function() {
+    model.set('${1:attr}', '');
+  });
+
+  assert.equal("model.isValid", false, 'Object is Valid without a ${1:attr}');
+});
+]]></content>
+    <tabTrigger>qreq</tabTrigger>
+    <scope>source.js</scope>
+</snippet>
