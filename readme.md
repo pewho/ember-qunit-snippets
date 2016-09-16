@@ -15,3 +15,15 @@ test('it has an attribute: ${1:attr}', function(assert) {
   assert.ok(hasAttr);
 });
 ```
+### [qrel] test presence of relationship
+
+```js
+test('${1:modelCible} relationship', function(assert) {
+  let model = this.store().modelFor("${2:modelSource}");
+  let relationship = Ember.get(model, 'relationshipsByName').get("${1:modelCible}");
+
+  assert.equal(relationship.key, "${1:modelCible}");
+  assert.equal(relationship.kind, "${3:belongsTo}");
+});
+
+```
